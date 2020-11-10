@@ -1,0 +1,1 @@
+E:\c#\autoRspd\autoRspd\bin\Debug\autoRspd.exe.config

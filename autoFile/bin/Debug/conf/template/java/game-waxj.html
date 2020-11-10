@@ -1,0 +1,175 @@
+﻿<div data-page="game-waxj" class="page game-page qqc-game"
+	ng-controller="GameWaxjController">
+	<!-- 头部导航 -->
+	<div class="navbar cur-navbar">
+		<div class="navbar-inner">
+			<div class="left">
+				<a href="#" class="back link icon-only"> <i
+					class="icon icon-back"></i>
+				</a>
+			</div>
+			<div class="center" ng-bind="game.gameName"></div>
+			<div class="right">
+				<a href="#" class="link icon-only more-game-menu"><i
+					class="material-icons">more_vert</i></a>
+			</div>
+		</div>
+	</div>
+	<div class="marskdiv"></div>
+	<div class="game-menu" style="display: none">
+		<ul>
+			<li><a href="#" class="open-popup" data-popup=".odds-layer">游戏介绍</a></li>
+			<li><a href="#" class="open-popup" data-popup=".chart-layer">走势图</a></li>
+		</ul>
+	</div>
+	<div class="toolbar toolbar-bottom  bet-bottom">
+		<div class="toolbar-inner">
+			<a href="#" ng-disabled="!inited" ng-click="clear()"
+				class="link button button-fill button-raised color-blue bet-button">重置</a>
+				<span>余额：{{usermoney}}</span>
+			<a href="#" ng-disabled="game.startSeconds<10||!inited||subbet" ng-click="addItem($event)" style="width:25%!important"
+				class="link button button-fill button-raised bet-button">下注</a> 
+		</div>
+	</div>
+	<!-- 内容区 -->
+	<div class="page-content"
+		style="padding-bottom: 49px; background: #082163">
+		<iframe src="tpl/game/index.html" frameborder="no" border="0"
+			scrolling="no" allowtransparency="yes" class="gamebox" id="gamebox"></iframe>
+	</div>
+	<div class="popup qqc-game chart-layer my-popup">
+		<div class="navbar">
+			<div class="navbar-inner">
+				<div class="center">走势图</div>
+				<div class="right">
+					<a href="#" class="link close-popup icon-only"> <i
+						class="material-icons">cancel</i>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="popup-page">
+			<div class="page-content" style="">
+					<table style="width: 100%" class="chart-table">
+						<thead>
+							<tr>
+								<td>期号</td>
+								<td>值</td>
+								<td>大</td>
+								<td>小</td>
+								<td>单</td>
+								<td>双</td>
+								<td>大双</td>
+								<td>小双</td>
+								<td>大单</td>
+								<td>小单</td>
+								<td>顺子</td>
+								<td>豹子</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="aw in awards">
+								<td class="" ng-bind="aw.issue"></td>
+								<td class="guessChart_sum" ng-bind="aw.total"></td>
+								<td class="guessChart_bs"><span ng-if="aw.isbig"></span></td>
+								<td class="guessChart_bs"><span ng-if="aw.issmall"></span></td>
+								<td class="guessChart_sd"><span ng-if="aw.issingle"></span></td>
+								<td class="guessChart_sd"><span ng-if="aw.isdouble"></span></td>
+								<td class="guessChart_dssd"><span ng-if="aw.isbigdouble"></span></td>
+								<td class="guessChart_dssd"><span ng-if="aw.issmalldouble"></span></td>
+								<td class="guessChart_dssd"><span ng-if="aw.isbigsingle"></span></td>
+								<td class="guessChart_dssd"><span ng-if="aw.issmallsingle"></span></td>
+								<td class="guessChart_ss"><span ng-if="aw.issort"></span></td>
+								<td class="guessChart_ss"><span ng-if="aw.issame"></span></td>
+							</tr>
+						</tbody>
+					</table>
+			</div>
+		</div>
+	</div>
+	<div class="popup qqc-game odds-layer my-popup">
+		<div class="navbar">
+			<div class="navbar-inner">
+				<div class="center">游戏介绍</div>
+				<div class="right">
+					<a href="#" class="link close-popup icon-only"> <i
+						class="material-icons">cancel</i>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="popup-page">
+			<div class="page-content" style="background:#082163">
+				<div class="content-block">
+					<p>企鹅分分彩开奖结果数据取自QQ在线人数统计主页右上角在线人数后三位相加。例如：2017-03-04
+						16：06：00 的当前在线人数为256728913，取其后三位9+1+3相加得开奖结果13。</p>
+					<p>
+						<img src="img/slice1.jpg" style="width:100%">
+					</p>
+					<table style="width:100%">
+						<thead>
+							<tr>
+								<td>玩法</td>
+								<td>命中数字</td>
+								<td>赔率</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>豹子</td>
+								<td>000, 111, 222, 333, 444, 555, 666, 777, 888, 999</td>
+								<td ng-bind="odds['QQC001001002'].odds"></td>
+							</tr>
+							<tr>
+								<td>顺子</td>
+								<td>012, 123, 234, 345, 456, 567, 678, 789, 987, 876, 765,
+									654, 543, 432, 321, 210</td>
+								<td ng-bind="odds['QQC001001010'].odds"></td>
+							</tr>
+							<tr>
+								<td>大</td>
+								<td>14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27</td>
+								<td ng-bind="odds['QQC001001004'].odds"></td>
+							</tr>
+							<tr>
+								<td>小</td>
+								<td>0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13</td>
+								<td ng-bind="odds['QQC001001005'].odds"></td>
+							</tr>
+							<tr>
+								<td>单</td>
+								<td>1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27</td>
+								<td ng-bind="odds['QQC001001006'].odds"></td>
+							</tr>
+							<tr>
+								<td>双</td>
+								<td>0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26</td>
+								<td ng-bind="odds['QQC001001007'].odds"></td>
+							</tr>
+							<tr>
+								<td>大单</td>
+								<td>15, 17, 19, 21, 23, 25, 27</td>
+								<td ng-bind="odds['QQC001001001'].odds"></td>
+							</tr>
+							<tr>
+								<td>大双</td>
+								<td>14, 16, 18, 20, 22, 24, 26</td>
+								<td ng-bind="odds['QQC001001008'].odds"></td>
+							</tr>
+							<tr>
+								<td>小单</td>
+								<td>1, 3, 5, 7, 9, 11, 13</td>
+								<td ng-bind="odds['QQC001001003'].odds"></td>
+							</tr>
+							<tr>
+								<td>小双</td>
+								<td>0, 2, 4, 6, 8, 10, 12</td>
+								<td ng-bind="odds['QQC001001009'].odds"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

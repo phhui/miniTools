@@ -1,0 +1,6 @@
+conf/template/h5/InfoCmd.ts,D:/pro/h5/waez/src/module/InfoCmd.ts
+conf/template/h5/InfoController.ts,D:/pro/h5/waez/src/module/InfoController.ts
+conf/template/h5/InfoMgr.ts,D:/pro/h5/waez/src/module/InfoMgr.ts
+conf/template/h5/InfoProxy.ts,D:/pro/h5/waez/src/module/InfoProxy.ts
+conf/template/h5/InfoView.ts,D:/pro/h5/waez/src/module/InfoView.ts
+conf/template/h5/Info.json,D:/pro/h5/waez/resource/config/Info.json

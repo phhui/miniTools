@@ -1,0 +1,12 @@
+E:\c#\QModule\QModule\bin\Debug\QModule.exe.config
+E:\c#\QModule\QModule\bin\Debug\QModule.exe
+E:\c#\QModule\QModule\bin\Debug\QModule.pdb
+E:\c#\QModule\QModule\obj\Debug\QModule.csprojResolveAssemblyReference.cache
+E:\c#\QModule\QModule\obj\Debug\QModule.Form1.resources
+E:\c#\QModule\QModule\obj\Debug\QModule.Properties.Resources.resources
+E:\c#\QModule\QModule\obj\Debug\QModule.csproj.GenerateResource.Cache
+E:\c#\QModule\QModule\obj\Debug\QModule.exe
+E:\c#\QModule\QModule\obj\Debug\QModule.pdb
+E:\h5\Client\src\modules\QModule.exe.config
+E:\h5\Client\src\modules\QModule.exe
+E:\h5\Client\src\modules\QModule.pdb

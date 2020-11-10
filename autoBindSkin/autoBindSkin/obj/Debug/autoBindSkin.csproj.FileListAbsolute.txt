@@ -1,0 +1,9 @@
+E:\c#\autoBindSkin\autoBindSkin\bin\Debug\autoBindSkin.exe.config
+E:\c#\autoBindSkin\autoBindSkin\bin\Debug\autoBindSkin.exe
+E:\c#\autoBindSkin\autoBindSkin\bin\Debug\autoBindSkin.pdb
+E:\c#\autoBindSkin\autoBindSkin\obj\Debug\autoBindSkin.Properties.Resources.resources
+E:\c#\autoBindSkin\autoBindSkin\obj\Debug\autoBindSkin.csproj.GenerateResource.Cache
+E:\c#\autoBindSkin\autoBindSkin\obj\Debug\autoBindSkin.exe
+E:\c#\autoBindSkin\autoBindSkin\obj\Debug\autoBindSkin.pdb
+E:\c#\autoBindSkin\autoBindSkin\obj\Debug\ppqq.autoSkinObj.resources
+E:\c#\autoBindSkin\autoBindSkin\obj\Debug\autoBindSkin.csprojResolveAssemblyReference.cache

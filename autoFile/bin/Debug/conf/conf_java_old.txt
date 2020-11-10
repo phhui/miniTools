@@ -1,0 +1,8 @@
+conf/template/IWaxjOrderFacade.java,D:/wk/java/chaos-pro/chaos.gaia-game-parent/chaos.gaia-game-business/src/main/java/com/chaos/gaia/game/business/facade/lottery/IWaxjOrderFacade.java
+conf/template/WaxjOrderFacade.java,D:/wk/java/chaos-pro/chaos.gaia-game-parent/chaos.gaia-game-business/src/main/java/com/chaos/gaia/game/business/facade/lottery/impl/WaxjOrderFacade.java
+conf/template/IWaxjBetOrderService.java,D:/wk/java/chaos-pro/chaos.gaia-game-parent/chaos.gaia-game-business/src/main/java/com/chaos/gaia/game/business/service/lottery/IWaxjBetOrderService.java
+conf/template/WaxjBetOrderService.java,D:/wk/java/chaos-pro/chaos.gaia-game-parent/chaos.gaia-game-business/src/main/java/com/chaos/gaia/game/business/service/lottery/impl/WaxjBetOrderService.java
+conf/template/WAXJLotteryClearing.java,D:/wk/java/chaos-pro/chaos.gaia-game-lottery/src/main/java/com/chaos/gaia/lottery/clearing/WAXJLotteryClearing.java
+conf/template/WAXJValidator.java,D:/wk/java/chaos-pro/chaos.gaia-game-lottery/src/main/java/com/chaos/gaia/lottery/validator/WAXJValidator.java
+conf/template/game-waxj.html,D:/wk/java/chaos-pro/chaos.gaia-parent/chaos.gaia-member/src/main/webapp/h5/lottery/tpl/game-waxj.html
+conf/template/GameWaxjController.js,D:/wk/java/chaos-pro/chaos.gaia-parent/chaos.gaia-member/src/main/webapp/h5/lottery/js/Controller/GameWaxjController.js
