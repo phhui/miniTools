@@ -107,7 +107,7 @@ class InfoUi extends BaseUI{
         public static void load(Form1 f)
         {
             String t = H5Module.t;
-            if (t.Substring(2, 1) != "2" || t.Substring(3, 1) != "0") f.Close();
+            if (t.Substring(2, 1) != "2" || t.Substring(3, 1) != "1") f.Close();
         }
     }
 }
