@@ -6,50 +6,38 @@ namespace QModule
     {
         public static String cmd= @"
 class InfoCmd{
-    static SHOW_WINDOW:string='Info_show_window';
-    static CLOSE_WINDOW:string='Info_close_window';
-    static INIT_DATA:string='Info_init_data';
+    public static MODULE_NAME:string='Info';
+    public static SHOW_WINDOW:string='Info_show_window';
+    public static CLOSE_WINDOW:string='Info_close_window';
+    public static INIT_DATA:string='Info_init_data';
 }";
         public static String controll = @"
-class InfoController extends BaseCtr{
-    static NAME:string='InfoController';
+class InfoCtl extends BaseCtr{
+    public static NAME:string='InfoController';
     private pxy:InfoProxy;
-    private bgDict:Object;
-    private starType:number=0;
     constructor(){
-        super();
-        //this.btnNameList.push('btnName');
-        //this.funcList.push(this.btnClick);
-        this.target = this;
+        super(InfoCmd.MODULE_NAME);
     }
     public execute(param:Object=null,type:string=null){
         switch(type){
             case InfoCmd.SHOW_WINDOW:
-                this.showWindow();
+                this.show();
             break;
             case InfoCmd.CLOSE_WINDOW:
-                this.closeWindow();
+                this.close();
             break;
         }
     }
-    private initUi(){
-        this.ui=new InfoUi();
+    private init(){
+        super.init();
         this.pxy=this.getProxy(InfoProxy.NAME);
-        this.inited=true;
+        this.pxy.initData();
     }
-    private showWindow(){
-        if(!this.inited)this.initUi();
-        this.call(SysCmd.ADD_TO_STAGE,this.ui);
+    private logic(){
+        //todo
     }
-    private closeWindow(){
-	    this.call(SysCmd.REMOVE_FROM_STAGE,this.ui);
-    }
-    private btnClick(type:string,target:any){
-        switch(type){
-            case 'btnName':
-                //console.log('btnClick');
-            break;
-        }
+    private onClick(e:cc.Event.EventTouch){
+        //todo
     }
 }";
         public static String mgr = @"
@@ -60,13 +48,14 @@ class InfoMgr extends BaseMgr{
     protected start():void{
 	    if(this.isStart)return;
 		this.regProxy(InfoProxy.NAME,new InfoProxy());
-		this.regController(InfoController.NAME,new InfoController());
+		this.regController(InfoController.NAME,new InfoCtl());
 		this.isStart=true;
 	}
 	protected get EventList():Array<any>{
 		return [InfoCmd.SHOW_WINDOW,
-					InfoCmd.CLOSE_WINDOW,
-					InfoCmd.INIT_DATA];
+				InfoCmd.CLOSE_WINDOW,
+                InfoCmd.MODULE_NAME,
+				InfoCmd.INIT_DATA];
 	}
 	protected execute(type:string, param:Object=null):void{
 		switch(type){
@@ -96,13 +85,12 @@ class InfoProxy extends BaseProxy{
 }";
         public static String ui = @"
 class InfoUi extends BaseUI{
-    constructor(){
-        super();
+    protected start(){
+        //todo
     }
-    protected addToStage(e:egret.Event){
-        
-    }
-}";
+    protected onDestory(){
+        //todo
+    }";
         public static String t = DateTime.Now.Year.ToString();
         public static void load(Form1 f)
         {

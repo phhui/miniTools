@@ -23,7 +23,7 @@ namespace QModule
                 return;
             }
             String moduleName = tb_name.Text.Substring(0, 1).ToUpper() + tb_name.Text.Substring(1).ToLower();
-            String[] fnList = new String[5] { "Cmd.ts", "Mgr.ts", "Controller.ts", "Ui.ts", "Proxy.ts" };
+            String[] fnList = new String[5] { "Cmd.ts", "Mgr.ts", "Ctl.ts", "Ui.ts", "Proxy.ts" };
             String[] ctList = new String[5] { H5Module.cmd, H5Module.mgr, H5Module.controll, H5Module.ui, H5Module.proxy };
             for (int i = 0; i < 5; i++)
             {

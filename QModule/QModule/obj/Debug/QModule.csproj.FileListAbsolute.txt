@@ -10,6 +10,7 @@ E:\c#\QModule\QModule\obj\Debug\QModule.pdb
 E:\h5\Client\src\modules\QModule.exe.config
 E:\h5\Client\src\modules\QModule.exe
 E:\h5\Client\src\modules\QModule.pdb
+<<<<<<< HEAD
 D:\pro\C#\min-tools\QModule\QModule\bin\Debug\QModule.exe.config
 D:\pro\C#\min-tools\QModule\QModule\bin\Debug\QModule.exe
 D:\pro\C#\min-tools\QModule\QModule\bin\Debug\QModule.pdb
@@ -19,3 +20,15 @@ D:\pro\C#\min-tools\QModule\QModule\obj\Debug\QModule.Properties.Resources.resou
 D:\pro\C#\min-tools\QModule\QModule\obj\Debug\QModule.csproj.GenerateResource.cache
 D:\pro\C#\min-tools\QModule\QModule\obj\Debug\QModule.exe
 D:\pro\C#\min-tools\QModule\QModule\obj\Debug\QModule.pdb
+=======
+E:\pro\c#\min-tools\QModule\QModule\bin\Debug\QModule.exe.config
+E:\pro\c#\min-tools\QModule\QModule\bin\Debug\QModule.exe
+E:\pro\c#\min-tools\QModule\QModule\bin\Debug\QModule.pdb
+E:\pro\c#\min-tools\QModule\QModule\obj\Debug\QModule.csprojAssemblyReference.cache
+E:\pro\c#\min-tools\QModule\QModule\obj\Debug\QModule.Form1.resources
+E:\pro\c#\min-tools\QModule\QModule\obj\Debug\QModule.Properties.Resources.resources
+E:\pro\c#\min-tools\QModule\QModule\obj\Debug\QModule.csproj.GenerateResource.cache
+E:\pro\c#\min-tools\QModule\QModule\obj\Debug\QModule.csproj.CoreCompileInputs.cache
+E:\pro\c#\min-tools\QModule\QModule\obj\Debug\QModule.exe
+E:\pro\c#\min-tools\QModule\QModule\obj\Debug\QModule.pdb
+>>>>>>> fb3df4eb3f0fa65b7e89b9650b5a7bebbe35726c
