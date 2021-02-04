@@ -33,6 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tb_name = new System.Windows.Forms.TextBox();
             this.btn_create = new System.Windows.Forms.Button();
+            this.cbType = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // log
@@ -51,7 +52,7 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1, 206);
+            this.label1.Location = new System.Drawing.Point(82, 205);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 12);
@@ -62,10 +63,10 @@
             // 
             this.tb_name.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tb_name.Location = new System.Drawing.Point(64, 201);
+            this.tb_name.Location = new System.Drawing.Point(145, 201);
             this.tb_name.Margin = new System.Windows.Forms.Padding(2);
             this.tb_name.Name = "tb_name";
-            this.tb_name.Size = new System.Drawing.Size(158, 21);
+            this.tb_name.Size = new System.Drawing.Size(77, 21);
             this.tb_name.TabIndex = 23;
             // 
             // btn_create
@@ -80,11 +81,25 @@
             this.btn_create.UseVisualStyleBackColor = true;
             this.btn_create.Click += new System.EventHandler(this.btn_create_Click);
             // 
+            // cbType
+            // 
+            this.cbType.FormattingEnabled = true;
+            this.cbType.Items.AddRange(new object[] {
+            "cocos",
+            "egret"});
+            this.cbType.Location = new System.Drawing.Point(2, 200);
+            this.cbType.Name = "cbType";
+            this.cbType.Size = new System.Drawing.Size(75, 20);
+            this.cbType.TabIndex = 26;
+            this.cbType.Text = "cocos";
+            this.cbType.SelectedIndexChanged += new System.EventHandler(this.cbType_SelectedIndexChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 224);
+            this.Controls.Add(this.cbType);
             this.Controls.Add(this.log);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tb_name);
@@ -105,6 +120,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tb_name;
         private System.Windows.Forms.Button btn_create;
+        private System.Windows.Forms.ComboBox cbType;
     }
 }
 

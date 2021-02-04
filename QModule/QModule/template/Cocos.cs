@@ -1,10 +1,10 @@
 ﻿using System;
 
-namespace QModule
+namespace QModule.template
 {
-    class H5Module
+    class Cocos
     {
-        public static String cmd= @"
+        public static String cmd = @"
 export default class InfoCmd{
     public static MODULE_NAME:string='Info';
     public static SHOW_WINDOW:string='Info_show_window';
@@ -21,6 +21,7 @@ export default class InfoCtl extends BaseCtr{
         super(InfoCmd.MODULE_NAME);
     }
     public execute(param:Object=null,type:string=null){
+        if(!this.pxy)this.pxy=this.getProxy(InfoProxy.NAME);
         switch(type){
             case InfoCmd.SHOW_WINDOW:
                 this.show();
@@ -32,7 +33,6 @@ export default class InfoCtl extends BaseCtr{
     }
     private init(){
         super.init();
-        this.pxy=this.getProxy(InfoProxy.NAME);
         this.pxy.initData();
     }
     private logic(){
@@ -43,7 +43,7 @@ export default class InfoCtl extends BaseCtr{
     }
 }";
         public static String mgr = @"
-import BaseMgr from '../ base / BaseMgr';
+import BaseMgr from '../base/BaseMgr';
 import FightCtl from './FightCtl';
 import FightProxy from './FightProxy';
 export default class InfoMgr extends BaseMgr{
@@ -74,7 +74,7 @@ export default class InfoMgr extends BaseMgr{
 	}
 }";
         public static String proxy = @"
-import BaseProxy from '../ base / BaseProxy';
+import BaseProxy from '../base/BaseProxy';
 export default class InfoProxy extends BaseProxy{
     static NAME:string='InfoProxy';
 	public execute(param:any= null, type:string= null):void{
@@ -90,20 +90,23 @@ export default class InfoProxy extends BaseProxy{
     }
 }";
         public static String ui = @"
-import BaseUi from '../ base / BaseUi';
+import BaseUi from '../base/BaseUi';
+const {ccclass, property} = cc._decorator;
+@ccclass
 export default class InfoUi extends BaseUi{
+    @property(cc.Prefab)
+    private pf:cc.Prefab=null;
+    @property(cc.Node)
+    private nd:cc.Node=null;
     start(){
         //todo
     }
-    onDestory(){
+    public bindData(data){
+        //todo
+    }
+    destory(){
         //todo
     }
 }";
-        public static String t = DateTime.Now.Year.ToString();
-        public static void load(Form1 f)
-        {
-            String t = H5Module.t;
-            if (t.Substring(2, 1) != "2" || t.Substring(3, 1) != "1") f.Close();
-        }
     }
 }

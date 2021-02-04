@@ -24,7 +24,7 @@ namespace QModule
             }
             String moduleName = tb_name.Text.Substring(0, 1).ToUpper() + tb_name.Text.Substring(1).ToLower();
             String[] fnList = new String[5] { "Cmd.ts", "Mgr.ts", "Ctl.ts", "Ui.ts", "Proxy.ts" };
-            String[] ctList = new String[5] { H5Module.cmd, H5Module.mgr, H5Module.controll, H5Module.ui, H5Module.proxy };
+            String[] ctList = new String[5] { Template.cmd, Template.mgr, Template.ctl, Template.ui, Template.proxy };
             for (int i = 0; i < 5; i++)
             {
                 String fn = moduleName + fnList[i];
@@ -89,15 +89,15 @@ namespace QModule
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            H5Module.load(this);
+            Template.load(this);
+            Template.type = cbType.Text;
             //createRspd();
         }
         private void createRspd()
         {
             if (!File.Exists("src/com/kynet/protocols/MsgId.ts")) return;
             String ct = File.ReadAllText("src/com/kynet/protocols/MsgId.ts");
-            String reg = "/**程序生成，请勿修改*/\r\n" + @"class RegRspd{
-    constructor(){";
+            String reg = "/**程序生成，请勿修改*/\r\n" + @"class RegRspd{    constructor(){";
             String tmp = ct.Substring(ct.IndexOf("Rspd"));
             String cls = tmp.Substring(tmp.IndexOf("Rspd"), tmp.IndexOf(" "));
             reg += "\r\n        SocketMgr.regRspd(0,protocols." + cls + ");\r\n";
@@ -115,6 +115,11 @@ namespace QModule
 }";
             File.WriteAllText("src/com/kynet/RegRspd.ts", reg);
             log.Text = "Rspd已生成";
+        }
+
+        private void cbType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Template.type = cbType.Text;
         }
     }
 }
