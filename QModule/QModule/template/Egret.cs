@@ -5,15 +5,15 @@ namespace QModule.template
     class Egret
     {
         public static String cmd = @"
-class InfoCmd{
-    static SHOW_WINDOW:string='Info_show_window';
-    static CLOSE_WINDOW:string='Info_close_window';
-    static INIT_DATA:string='Info_init_data';
+class Pq_TemplateCmd{
+    static SHOW_WINDOW:string='Pq_Template_show_window';
+    static CLOSE_WINDOW:string='Pq_Template_close_window';
+    static INIT_DATA:string='Pq_Template_init_data';
 }";
         public static String controll = @"
-class InfoController extends BaseCtr{
-    static NAME:string='InfoController';
-    private pxy:InfoProxy;
+class Pq_TemplateController extends BaseCtr{
+    static NAME:string='Pq_TemplateController';
+    private pxy:Pq_TemplateProxy;
     private bgDict:Object;
     private starType:number=0;
     constructor(){
@@ -24,17 +24,17 @@ class InfoController extends BaseCtr{
     }
     public execute(param:Object=null,type:string=null){
         switch(type){
-            case InfoCmd.SHOW_WINDOW:
+            case Pq_TemplateCmd.SHOW_WINDOW:
                 this.showWindow();
             break;
-            case InfoCmd.CLOSE_WINDOW:
+            case Pq_TemplateCmd.CLOSE_WINDOW:
                 this.closeWindow();
             break;
         }
     }
     private initUi(){
-        this.ui=new InfoUi();
-        this.pxy=this.getProxy(InfoProxy.NAME);
+        this.ui=new Pq_TemplateUi();
+        this.pxy=this.getProxy(Pq_TemplateProxy.NAME);
         this.inited=true;
     }
     private showWindow(){
@@ -53,38 +53,38 @@ class InfoController extends BaseCtr{
     }
 }";
         public static String mgr = @"
-class InfoMgr extends BaseMgr{
+class Pq_TemplateMgr extends BaseMgr{
     constructor(){
         super();
     }
     protected start():void{
 	    if(this.isStart)return;
-		this.regProxy(InfoProxy.NAME,new InfoProxy());
-		this.regController(InfoController.NAME,new InfoController());
+		this.regProxy(Pq_TemplateProxy.NAME,new Pq_TemplateProxy());
+		this.regController(Pq_TemplateController.NAME,new Pq_TemplateController());
 		this.isStart=true;
 	}
 	protected get EventList():Array<any>{
-		return [InfoCmd.SHOW_WINDOW,
-					InfoCmd.CLOSE_WINDOW,
-					InfoCmd.INIT_DATA];
+		return [Pq_TemplateCmd.SHOW_WINDOW,
+					Pq_TemplateCmd.CLOSE_WINDOW,
+					Pq_TemplateCmd.INIT_DATA];
 	}
 	protected execute(type:string, param:Object=null):void{
 		switch(type){
-			case InfoCmd.INIT_DATA:
-				this.proxy(InfoProxy.NAME,param,type);
+			case Pq_TemplateCmd.INIT_DATA:
+				this.proxy(Pq_TemplateProxy.NAME,param,type);
 			break;
 			default:
-				this.control(InfoController.NAME,param,type);
+				this.control(Pq_TemplateController.NAME,param,type);
 			break;
 		}
 	}
 }";
         public static String proxy = @"
-class InfoProxy extends BaseProxy{
-    static NAME:string='InfoProxy';
+class Pq_TemplateProxy extends BaseProxy{
+    static NAME:string='Pq_TemplateProxy';
 	public execute(param:any= null, type:string= null):void{
 		switch(type){
-			case InfoCmd.INIT_DATA:
+			case Pq_TemplateCmd.INIT_DATA:
 				this.initData();
 				break;
 		}
@@ -95,7 +95,7 @@ class InfoProxy extends BaseProxy{
     }
 }";
         public static String ui = @"
-class InfoUi extends BaseUI{
+class Pq_TemplateUi extends BaseUI{
     constructor(){
         super();
     }

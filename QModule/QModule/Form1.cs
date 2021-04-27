@@ -7,9 +7,9 @@ namespace QModule
     public partial class Form1 : Form
     {
         private string configPath = "conf/conf.txt";
-        private string key1 = "INFO";
-        private string key2 = "Info";
-        private string key3 = "info";
+        private string key1 = "PQ_TEMPLATE";
+        private string key2 = "Pq_Template";
+        private string key3 = "pq_template";
         public Form1()
         {
             InitializeComponent();
@@ -43,6 +43,34 @@ namespace QModule
                     try
                     {
                         File.WriteAllText(tb_name.Text.ToLower() + "/" + fn, nct);
+                        logShow("【" + fn + "】生成成功！");
+                    }
+                    catch (Exception err)
+                    {
+                        logShow("【" + fn + "】生成失败！\r\n" + err.Message);
+                    }
+
+                }
+            }
+            if (Template.type == Template.cc)
+            {
+                string fn = moduleName + ".prefab";
+                string path = "../../resources/pf/modules/";
+                if (!Directory.Exists(path+tb_name.Text))
+                {
+                    Directory.CreateDirectory(path + tb_name.Text.ToLower());
+                }
+                if (File.Exists(moduleName+".prefab"))
+                {
+                    logShow("目标路径已存在【" + fn + "】，生成失败！");
+                }
+                else
+                {
+                    string ctt = Template.prefab.Replace("'","\"");
+                    string nct = converName(ctt);
+                    try
+                    {
+                        File.WriteAllText(path+tb_name.Text.ToLower() + "/" + fn, nct);
                         logShow("【" + fn + "】生成成功！");
                     }
                     catch (Exception err)

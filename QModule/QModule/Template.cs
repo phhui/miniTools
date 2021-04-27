@@ -6,8 +6,8 @@ namespace QModule
     class Template
     {
         public static string type;
-        private static string eg = "egret";
-        private static string cc = "cocos";
+        public static string eg = "egret";
+        public static string cc = "cocos";
         public static String cmd{
             get
             {
@@ -43,6 +43,13 @@ namespace QModule
             {
                 if (type.ToString() == eg) return Egret.ui;
                 return Cocos.ui;
+            }
+        }
+        public static String prefab
+        {
+            get
+            {
+                return Cocos.prefab;
             }
         }
         public static String t = DateTime.Now.Year.ToString();

@@ -12,9 +12,10 @@ export default class InfoCmd{
     public static INIT_DATA:string='Info_init_data';
 }";
         public static String controll = @"
-import BaseCtr from '../base/BaseController';
-import FightProxy from './FightProxy';
-export default class InfoCtl extends BaseCtr{
+import BaseCtr from '../base/BaseCtl';
+import InfoCmd from './ InfoCmd';
+import FightProxy from './InfoProxy';
+export default class InfoCtl extends BaseCtl{
     public static NAME:string='InfoController';
     private pxy:InfoProxy;
     constructor(){
@@ -30,22 +31,23 @@ export default class InfoCtl extends BaseCtr{
             break;
         }
     }
-    private init(){
+    public init(){
         super.init();
         this.pxy=this.getProxy(InfoProxy.NAME);
         this.pxy.initData();
     }
-    private logic(){
+    public logic(){
         //todo
     }
-    private onClick(e:cc.Event.EventTouch){
+    public onClick(e:cc.Event.EventTouch){
         //todo
     }
 }";
         public static String mgr = @"
 import BaseMgr from '../ base / BaseMgr';
-import FightCtl from './FightCtl';
-import FightProxy from './FightProxy';
+import InfoCmd from './InfoCmd';
+import FightCtl from './InfoCtl';
+import FightProxy from './InfoProxy';
 export default class InfoMgr extends BaseMgr{
     constructor(){
         super();

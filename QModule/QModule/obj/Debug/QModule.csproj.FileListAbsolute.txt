@@ -7,3 +7,13 @@ E:\pro\c#\min-tools\QModule\QModule\obj\Debug\QModule.csproj.GenerateResource.ca
 E:\pro\c#\min-tools\QModule\QModule\obj\Debug\QModule.csproj.CoreCompileInputs.cache
 E:\pro\c#\min-tools\QModule\QModule\obj\Debug\QModule.exe
 E:\pro\c#\min-tools\QModule\QModule\obj\Debug\QModule.pdb
+D:\work\c#\min-tools\QModule\QModule\bin\Debug\QModule.exe.config
+D:\work\c#\min-tools\QModule\QModule\bin\Debug\QModule.exe
+D:\work\c#\min-tools\QModule\QModule\bin\Debug\QModule.pdb
+D:\work\c#\min-tools\QModule\QModule\obj\Debug\QModule.csprojAssemblyReference.cache
+D:\work\c#\min-tools\QModule\QModule\obj\Debug\QModule.Form1.resources
+D:\work\c#\min-tools\QModule\QModule\obj\Debug\QModule.Properties.Resources.resources
+D:\work\c#\min-tools\QModule\QModule\obj\Debug\QModule.csproj.GenerateResource.cache
+D:\work\c#\min-tools\QModule\QModule\obj\Debug\QModule.csproj.CoreCompileInputs.cache
+D:\work\c#\min-tools\QModule\QModule\obj\Debug\QModule.exe
+D:\work\c#\min-tools\QModule\QModule\obj\Debug\QModule.pdb
