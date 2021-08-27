@@ -14,7 +14,6 @@ namespace QModule
         {
             InitializeComponent();
         }
-
         private void btn_create_Click(object sender, EventArgs e)
         {
             if (tb_name.Text.Trim().Length < 1)
@@ -22,15 +21,17 @@ namespace QModule
                 MessageBox.Show("请输入模块名称！");
                 return;
             }
-            String moduleName = tb_name.Text.Substring(0, 1).ToUpper() + tb_name.Text.Substring(1).ToLower();
+            string outputPath = tb_name.Text;
+            if (Template.type == Template.tmp) outputPath = Template.outputPath + tb_name.Text;
+            String moduleName = tb_name.Text.Substring(0, 1).ToUpper() + tb_name.Text.Substring(1);
             String[] fnList = new String[5] { "Cmd.ts", "Mgr.ts", "Ctl.ts", "Ui.ts", "Proxy.ts" };
             String[] ctList = new String[5] { Template.cmd, Template.mgr, Template.ctl, Template.ui, Template.proxy };
             for (int i = 0; i < 5; i++)
             {
                 String fn = moduleName + fnList[i];
-                if (!Directory.Exists(tb_name.Text))
+                if (!Directory.Exists(outputPath))
                 {
-                    Directory.CreateDirectory(tb_name.Text.ToLower());
+                    Directory.CreateDirectory(outputPath);
                 }
                 if (File.Exists(fn))
                 {
@@ -42,7 +43,7 @@ namespace QModule
                     string nct = converName(ctt);
                     try
                     {
-                        File.WriteAllText(tb_name.Text.ToLower() + "/" + fn, nct);
+                        File.WriteAllText(outputPath + "/" + fn, nct);
                         logShow("【" + fn + "】生成成功！");
                     }
                     catch (Exception err)
@@ -55,10 +56,9 @@ namespace QModule
             if (Template.type == Template.cc)
             {
                 string fn = moduleName + ".prefab";
-                string path = "../../resources/pf/modules/";
-                if (!Directory.Exists(path+tb_name.Text))
+                if (!Directory.Exists(outputPath))
                 {
-                    Directory.CreateDirectory(path + tb_name.Text.ToLower());
+                    Directory.CreateDirectory(outputPath);
                 }
                 if (File.Exists(moduleName+".prefab"))
                 {
@@ -70,7 +70,7 @@ namespace QModule
                     string nct = converName(ctt);
                     try
                     {
-                        File.WriteAllText(path+tb_name.Text.ToLower() + "/" + fn, nct);
+                        File.WriteAllText(outputPath + "/" + fn, nct);
                         logShow("【" + fn + "】生成成功！");
                     }
                     catch (Exception err)
@@ -110,7 +110,7 @@ namespace QModule
         private string converName(string s)
         {
             //s = s.Replace(key1, tb_name.Text.ToUpper());
-            s = s.Replace(key2, tb_name.Text.ToUpper().Substring(0, 1) + tb_name.Text.ToLower().Substring(1));
+            s = s.Replace(key2, tb_name.Text.ToUpper().Substring(0, 1) + tb_name.Text.Substring(1));
             //s = s.Replace(key3, tb_name.Text.ToLower());
             return s;
         }
@@ -148,6 +148,7 @@ namespace QModule
         private void cbType_SelectedIndexChanged(object sender, EventArgs e)
         {
             Template.type = cbType.Text;
+            if(Template.type==Template.tmp)Template.initTemplate();
         }
     }
 }

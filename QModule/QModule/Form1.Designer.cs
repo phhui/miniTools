@@ -86,7 +86,8 @@
             this.cbType.FormattingEnabled = true;
             this.cbType.Items.AddRange(new object[] {
             "cocos",
-            "egret"});
+            "egret",
+            "temp"});
             this.cbType.Location = new System.Drawing.Point(2, 200);
             this.cbType.Name = "cbType";
             this.cbType.Size = new System.Drawing.Size(75, 20);
